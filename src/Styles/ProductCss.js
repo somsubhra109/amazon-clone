@@ -14,7 +14,12 @@ const useStyles = makeStyles({
     maxHeight: "400px",
     minWidth: "100px",
     backgroundColor: "white",
+    transition: "all 0.5s ease-in-out",
+    "&:hover": {
+      transform: "scale(1.05)",
+    },
   },
+
   productImage: {
     maxHeight: "200px",
     width: "100%",
