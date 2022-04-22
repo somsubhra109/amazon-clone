@@ -16,6 +16,10 @@ const useStyles = makeStyles({
     padding: "10px",
     borderBottom: "1px solid lightgray",
   },
+  emptyText: {
+    marginRight: "10px",
+    padding: "10px",
+  },
 });
 
 export default useStyles;
