@@ -1,6 +1,6 @@
 import React from "react";
 import useStyles from "../Styles/CheckoutCss";
-import CheckoutProdcut from "./CheckoutProdcut";
+import CheckoutProduct from "./CheckoutProduct";
 import Subtotal from "./Subtotal";
 import { useStateValue } from "./StateProvider";
 import Header from "./Header";
@@ -24,7 +24,7 @@ function Checkout() {
               <p className={classes.emptyText}>Basket is empty.</p>
             )}
             {basket.map((item) => (
-              <CheckoutProdcut
+              <CheckoutProduct
                 id={item.id}
                 title={item.title}
                 image={item.image}

@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     backgroundColor: "white",
     transition: "all 0.5s ease-in-out",
     "&:hover": {
-      transform: "scale(1.05)",
+      transform: "scale(1.02)",
     },
   },
 
