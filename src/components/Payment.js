@@ -4,10 +4,15 @@ import Header from "./Header";
 import CheckoutProduct from "./CheckoutProduct";
 import { useStateValue } from "./StateProvider";
 import { Link } from "react-router-dom";
-
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import CurrencyFormat from "react-currency-format";
+import { getBasketTotal } from "../DataLayer/reducer";
 function Payment() {
   const classes = useStyles();
   const [{ basket, user }, dispatch] = useStateValue();
+  const stripe = useStripe();
+  const elements = useElements();
+  const handleChange = () => {};
   return (
     <>
       <Header />
@@ -46,7 +51,21 @@ function Payment() {
             <div className={classes.paymentTitle}>
               <h3>Payment Method</h3>
             </div>
-            <div className={classes.paymentDetails}></div>
+            <div className={classes.paymentDetails}>
+              <form>
+                <CardElement onChange={handleChange} />
+                <div className={classes.paymentPrice}>
+                  <CurrencyFormat
+                    renderText={(value) => <h3>Order Total :{value}</h3>}
+                    decimalScale={2}
+                    value={getBasketTotal(basket)}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                    prefix={"$"}
+                  />
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>

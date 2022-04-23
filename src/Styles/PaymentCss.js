@@ -31,6 +31,9 @@ const useStyles = makeStyles({
   paymentItems: {
     flex: 0.8,
   },
+  paymentDetails: {
+    flex: 0.8,
+  },
 });
 
 export default useStyles;
